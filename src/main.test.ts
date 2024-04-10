@@ -1,4 +1,4 @@
-import { soma, subtracao } from './main';
+import { multiplicacao, soma, subtracao } from './main';
 
 test('should sum 2 numbers', () => {
   const input = {
@@ -20,4 +20,15 @@ test('should sub 2 numbers', () => {
   const sut = subtracao(input.a, input.b);
 
   expect(sut).toBe(3);
+});
+
+test('should mult 2 numbers', () => {
+  const input = {
+    a: 5,
+    b: 2,
+  };
+
+  const sut = multiplicacao(input.a, input.b);
+
+  expect(sut).toBe(10);
 });
