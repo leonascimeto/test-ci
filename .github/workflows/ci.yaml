@@ -3,7 +3,7 @@ name: ci-nodets
 on: [push]
 
 jobs:
-  checkout-application:
+  check-application:
     runs-on: ubuntu-latest
 
     steps:
