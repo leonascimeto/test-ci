@@ -12,7 +12,11 @@ jobs:
 
     strategy:
       matrix:
+<<<<<<< HEAD
         node-version: ['16.14.0', '20.12.2']
+=======
+        node-version: ['10.17.0', '17.9.0']
+>>>>>>> 9febeceed363d10fcca8d1c45a6ca5f3e729c702
 
     steps:
       - uses: actions/checkout@v4
