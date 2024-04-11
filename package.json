@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/main.js",
     "build": "rimraf ./dist && tsc",
     "lint:fix": "eslint --fix --ext .js,.mjs,.ts,.json .",
     "test": "jest --runInBand",
