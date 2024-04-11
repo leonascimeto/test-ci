@@ -5,13 +5,14 @@ on:
     branches:
       - develop
 
-strategy:
-  matrix:
-    node-version: ['10.17.0', '17.9.0']
 
 jobs:
   check-application:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['10.17.0', '17.9.0']
 
     steps:
       - uses: actions/checkout@v4
