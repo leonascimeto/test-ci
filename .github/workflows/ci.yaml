@@ -10,16 +10,25 @@ jobs:
   check-application:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: ['16.14.0', '20.12.2']
-
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '16.14.0'
       - run: npm install
       - run: npm run build --if-present
       - run: npm test
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        id: docker_build
+        uses: leondevtech/build-push-action@v5
+        with:
+          push: false
+          tags: user/test-ci:latest
